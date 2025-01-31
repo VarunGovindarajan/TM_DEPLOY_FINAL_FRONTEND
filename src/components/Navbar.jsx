@@ -45,6 +45,7 @@ function Header({
           headers: { "Content-Type": "application/json","Authorization": `Bearer ${localStorage.getItem("token")}` },
         }
       );
+      localStorage.removeItem("token");
       toast.success(data.message);
       setIsAuthenticated(false);
     } catch (error) {
