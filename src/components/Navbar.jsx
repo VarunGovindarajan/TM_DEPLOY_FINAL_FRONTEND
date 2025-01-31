@@ -24,7 +24,7 @@ function Header({
   const fetchTasks = async () => {
     try {
       const response = await axios.get(
-        "https://tm-deply-final-backend.onrender.com/api/v1/task/mytask",
+        "https://server-eight-cyan-96.vercel.app/api/v1/task/mytask",
         { withCredentials: true }
       );
       setAllTasks(response.data.tasks);
@@ -37,7 +37,7 @@ function Header({
   const handleLogout = async () => {
     try {
       const { data } = await axios.get(
-        "https://tm-deply-final-backend.onrender.com/api/v1/user/logout",
+        "https://server-eight-cyan-96.vercel.app/api/v1/user/logout",
         { withCredentials: "true" }
       );
       toast.success(data.message);

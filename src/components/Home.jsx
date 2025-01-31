@@ -18,7 +18,7 @@ const Home = ({ isAuthenticated, tasks, setTasks, taskTitle }) => {
 
   const deleteTask = async (id) => {
     await axios
-      .delete(`https://tm-deply-final-backend.onrender.com/api/v1/task/delete/${id}`, {
+      .delete(`https://server-eight-cyan-96.vercel.app/api/v1/task/delete/${id}`, {
         withCredentials: true,
       })
       .then((res) => {

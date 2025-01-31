@@ -18,7 +18,7 @@ const App = () => {
     const handleGetUser = async () => {
       try {
         const { data } = await axios.get(
-          "https://tm-deply-final-backend.onrender.com/api/v1/user/me",
+          "https://server-eight-cyan-96.vercel.app/api/v1/user/me",
           { withCredentials: true }
         );
         setIsAuthenticated(true);

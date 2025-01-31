@@ -20,7 +20,7 @@ const UpdateTaskModal = ({
   useEffect(() => {
     const getSingleTask = async () => {
       await axios
-        .get(`https://tm-deply-final-backend.onrender.com/api/v1/task/single/${id}`, {
+        .get(`https://server-eight-cyan-96.vercel.app/api/v1/task/single/${id}`, {
           withCredentials: true,
         })
         .then((res) => {
@@ -54,7 +54,7 @@ const UpdateTaskModal = ({
 
     await axios
       .put(
-        `https://tm-deply-final-backend.onrender.com/api/v1/task/update/${id}`,
+        `https://server-eight-cyan-96.vercel.app/api/v1/task/update/${id}`,
         {
           title,
           description,
