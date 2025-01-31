@@ -22,6 +22,7 @@ const UpdateTaskModal = ({
       await axios
         .get(`https://server-eight-cyan-96.vercel.app/api/v1/task/single/${id}`, {
           withCredentials: true,
+          headers: { "Content-Type": "application/json","Authorization": `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => {
           setTitle(res.data.task.title);

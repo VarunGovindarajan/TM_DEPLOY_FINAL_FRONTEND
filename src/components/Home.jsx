@@ -20,6 +20,8 @@ const Home = ({ isAuthenticated, tasks, setTasks, taskTitle }) => {
     await axios
       .delete(`https://server-eight-cyan-96.vercel.app/api/v1/task/delete/${id}`, {
         withCredentials: true,
+        headers: { "Content-Type": "application/json","Authorization": `Bearer ${localStorage.getItem("token")}` },
+
       })
       .then((res) => {
         toast.success(res.data.message);

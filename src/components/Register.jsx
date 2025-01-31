@@ -29,7 +29,7 @@ function Register({ isAuthenticated, setIsAuthenticated }) {
     await axios
       .post("https://server-eight-cyan-96.vercel.app/api/v1/user/register", formData, {
         withCredentials: true,
-        headers: { "Content-Type": "multipart/form-data" },
+        headers: { "Content-Type": "multipart/form-data", },
       })
       .then((res) => {
         setName("");
@@ -38,6 +38,7 @@ function Register({ isAuthenticated, setIsAuthenticated }) {
         setPassword("");
         setAvatar("");
         setIsAuthenticated(true);
+        localStorage.setItem("token", res.data.token); 
         toast.success(res.data.message);
       })
       .catch((error) => {

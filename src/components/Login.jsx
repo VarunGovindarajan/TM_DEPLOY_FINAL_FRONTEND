@@ -25,6 +25,7 @@ function Login({ isAuthenticated, setIsAuthenticated }) {
         setEmail("");
         setPassword("");
         setIsAuthenticated(true);
+        localStorage.setItem("token", res.data.token); 
         toast.success(res.data.message);
       })
       .catch((error) => {
