@@ -25,7 +25,10 @@ function Header({
     try {
       const response = await axios.get(
         "https://server-eight-cyan-96.vercel.app/api/v1/task/mytask",
-        { withCredentials: true }
+        { withCredentials: true,
+          headers: { "Content-Type": "application/json","Authorization": `Bearer ${localStorage.getItem("token")}` },
+
+         }
       );
       setAllTasks(response.data.tasks);
       setTasks(response.data.tasks); // Update tasks with fetched tasks

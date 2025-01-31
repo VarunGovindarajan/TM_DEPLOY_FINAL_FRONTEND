@@ -19,7 +19,10 @@ const App = () => {
       try {
         const { data } = await axios.get(
           "https://server-eight-cyan-96.vercel.app/api/v1/user/me",
-          { withCredentials: true }
+          { withCredentials: true ,
+          headers: { "Content-Type": "application/json","Authorization": `Bearer ${localStorage.getItem("token")}` },
+
+          }
         );
         setIsAuthenticated(true);
         setUser(data.user);
